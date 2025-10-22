@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transporte Rural</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Transporte Rural</h1>
+    </header>
+
+    <main class="main">
+
+      <!-- Registro -->
+      <section id="registerSection" class="card">
+        <h2>Registro</h2>
+        <input type="text" id="name" class="input" placeholder="Nombre completo">
+        <input type="tel" id="phone" class="input" placeholder="Teléfono">
+        <button id="registerBtn" class="btn primary">Registrarme</button>
+      </section>
+
+      <!-- Elegir rol -->
+      <section id="roleSection" class="card hidden">
+        <h2>Selecciona tu rol</h2>
+        <div class="row">
+          <button id="btnConductor" class="btn role">Conductor</button>
+          <button id="btnPasajero" class="btn role">Pasajero</button>
+        </div>
+      </section>
+
+      <!-- Conductor -->
+      <section id="conductorSection" class="card hidden">
+        <h2>¿Qué manejas?</h2>
+        <select id="vehicleType" class="input">
+          <option value="moto">Moto</option>
+          <option value="carro">Carro</option>
+          <option value="camion">Camión</option>
+        </select>
+        <button id="startServiceBtn" class="btn primary">Iniciar servicio</button>
+        <p id="statusConductor" class="small"></p>
+      </section>
+
+      <!-- Pasajero -->
+      <section id="pasajeroSection" class="card hidden">
+        <h2>Solicitar transporte</h2>
+        <select id="serviceType" class="input">
+          <option value="trasteo">Trasteo</option>
+          <option value="ganado">Llevar ganado</option>
+          <option value="personas">Llevar personas</option>
+          <option value="mascotas">Llevar mascotas</option>
+        </select>
+        <input id="address" class="input" type="text" placeholder="Dirección de recogida">
+        <button id="requestBtn" class="btn primary">Enviar solicitud</button>
+      </section>
+
+      <!-- Espera del conductor -->
+      <section id="waitingSection" class="card hidden">
+        <h2>Esperando conductor...</h2>
+        <p id="waitingMsg">Buscando conductores disponibles...</p>
+      </section>
+
+      <!-- Solicitud entrante (para conductor) -->
+      <section id="incomingSection" class="card hidden">
+        <h2>Solicitud entrante</h2>
+        <p id="requestInfo"></p>
+        <div class="row">
+          <button id="acceptBtn" class="btn primary">Aceptar</button>
+          <button id="rejectBtn" class="btn ghost">Rechazar</button>
+        </div>
+      </section>
+
+      <!-- Mapa y ruta -->
+      <section id="mapSection" class="card hidden">
+        <h2>Ubicación del conductor</h2>
+        <div id="map" class="map">🗺️ Mapa simulado</div>
+        <p id="driverInfo" class="small"></p>
+      </section>
+
+      <!-- Chat -->
+      <section id="chatSection" class="card hidden">
+        <h2>Chat</h2>
+        <div id="chatBox" class="chat-box"></div>
+        <div class="chat-input">
+          <input id="chatInput" class="input" placeholder="Escribe un mensaje..." />
+          <button id="sendBtn" class="btn primary">Enviar</button>
+        </div>
+      </section>
+
+      <!-- Pago -->
+      <section id="paymentSection" class="card hidden">
+        <h2>Método de pago</h2>
+        <div class="row">
+          <button id="btnEfectivo" class="chip">Efectivo</button>
+          <button id="btnTransferencia" class="chip">Transferencia</button>
+        </div>
+        <p id="paymentMsg" class="small"></p>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
